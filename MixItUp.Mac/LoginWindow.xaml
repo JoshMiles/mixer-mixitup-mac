@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MixItUp.Mac.LoginWindow"
+             >
+
+    <ScrollView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- <MaterialDesign:DialogHost x:Name="MDDialogHost" Identifier="RootDialog" />-->
+
+            <Grid Grid.Row="0" Margin="10,10" HorizontalOptions="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Frame Grid.Column="0" Margin="0,8,0,8" WidthRequest="350">
+                    <Grid HorizontalOptions="Center" VerticalOptions="Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Picker Grid.Row="0" x:Name="ExistingStreamerPicker" WidthRequest="240" />
+                        <Button Grid.Row="2" Grid.RowSpan="3" x:Name="StreamerLoginButton" IsEnabled="False" Clicked="StreamerLoginButton_Clicked" HorizontalOptions="Center" VerticalOptions="Center" MinimumWidthRequest="80" HeightRequest="30" Text="Login"/>
+
+                    </Grid>
+
+                </Frame>
+
+                <!-- <Controls:StreamingPlatformStatusAlertControl Grid.Column="1" HorizontalAlignment="Center" />-->
+
+                <Frame Grid.Column="2" Margin="0,8,0,8" WidthRequest="350">
+                    <Button x:Name="NewStreamerLoginButton" Clicked="NewStreamerLoginButton_Clicked" HorizontalOptions="Center" VerticalOptions="Center" MinimumWidthRequest="80" HeightRequest="30" Text="New Streamer"/>
+
+                </Frame>
+
+            </Grid>
+
+            <!-- <Controls:LoadingStatusBar x:Name="StatusBar" Grid.Row="1" />-->
+
+        </Grid>
+    </ScrollView>
+
+</ContentPage>

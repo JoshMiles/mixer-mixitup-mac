@@ -11,17 +11,15 @@
     <EmbeddedResource Remove="ViewModel\Command %2528OLD%2529\**" />
     <None Remove="Model\Import\**" />
     <None Remove="ViewModel\Command %2528OLD%2529\**" />
+    <None Remove="System.ComponentModel.Annotations" />
+    <None Remove="System.ComponentModel" />
+    <EmbeddedResource Remove="Resources.qps-ploc.resx" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="Overlay\OverlayPage.html" />
     <None Remove="Overlay\webSocketWrapper.js" />
     <None Remove="XSplit\Mix It Up.html" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Include="..\..\Mix It Up Web\MixItUpSecrets.cs" Link="MixItUpSecrets.cs" />
-    <Compile Include="..\..\Mix It Up Web\Services\External\VoicemodService.cs" Link="Services\External\VoicemodService.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -46,12 +44,8 @@
     <PackageReference Include="StreamingClientLibrary.Twitch" Version="1.0.0.42" />
     <PackageReference Include="StreamingClientLibrary.YouTube" Version="1.0.0.11" />
     <PackageReference Include="System.IO.Ports" Version="6.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="System.ComponentModel.DataAnnotations">
-      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.ComponentModel.DataAnnotations.dll</HintPath>
-    </Reference>
+    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+    <PackageReference Include="System.ComponentModel" Version="4.3.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -66,6 +60,14 @@
     </Compile>
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="..\..\Mix It Up Web\MixItUpSecrets.cs">
+      <Link>MixItUpSecrets.cs</Link>
+    </None>
+    <None Include="..\..\Mix It Up Web\Services\External\VoicemodService.cs">
+      <Link>Services\External\VoicemodService.cs</Link>
+    </None>
+  </ItemGroup>
   <ItemGroup>
     <None Update="LICENSE.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -145,9 +147,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </EmbeddedResource>
 
-    <EmbeddedResource Update="Resources.qps-ploc.resx">
-      <DependentUpon>Resources.resx</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   
 </Project>
